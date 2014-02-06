@@ -37,9 +37,9 @@ for (i in 1:length(ids)) {
  zoom <- min(MaxZoom(range(routes$latitude), range(routes$longitude)));
 
 
-gmap <- ggmap(get_map(location = c(-122.32, 47.59),
+gmap <- ggmap(get_map(location = c(-122.31, 47.595),
                       zoom = 12, maptype = "toner", 
-                      source="stamen"))
+                      source="stamen")) 
 gmap
 
 
@@ -47,5 +47,8 @@ g <- gmap  + geom_path(data = routes,
                        aes(x=longitude, y=latitude, group =factor(index)), 
                        col="purple", 
                        alpha = .5, 
-                       size = 1)
+                       size = 1) +
+  scale_x_continuous("", breaks = NA) + 
+  scale_y_continuous("", breaks = NA) 
+
 g
