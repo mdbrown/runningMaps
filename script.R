@@ -1,12 +1,12 @@
 library(plotKML)
 
-# GPX files downloaded from Runkeeper
-files <- dir("activities/", pattern = "\\.gpx")
+# GPX files downloaded from runkeeper
+files <- dir("activitiesPeter/", pattern = "\\.gpx")
 # Consolidate routes in one drata frame
 index <- c()
 latitude <- c()
 longitude <- c()
-setwd("activities/")
+setwd("activitiesPeter/")
 for (i in 1:length(files)) {
   
   route <- readGPX(files[i])
